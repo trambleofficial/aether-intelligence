@@ -1,0 +1,16 @@
+{
+  "name": "aether-intelligence",
+  "version": "1.0.0",
+  "description": "Next-Generation Cybernetic Interface Suite",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx browser-sync start --server --files '*.html, src/css/*.css, src/js/*.js'",
+    "format": "npx prettier --write ."
+  },
+  "author": "trambleofficial",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^3.0.0",
+    "prettier": "^3.0.0"
+  }
+}
