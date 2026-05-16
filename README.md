@@ -9,6 +9,7 @@ Aether Intelligence is a high-performance web suite designed with a futuristic, 
 - **Generative Grid Engine**: A background that reacts to the observer.
 - **Cyber-Brutalist Aesthetics**: Sharp corners, raw typography, and neon highlights.
 - **Aether Console**: A raw, data-stream-focused command center.
+- **Achievements System**: Gamified rewards and rank-tracking interface.
 - **Micro-Motion System**: Subtle glitch effects and precise animations.
 
 ## 🛠️ Built With
