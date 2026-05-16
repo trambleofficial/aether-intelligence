@@ -1,0 +1,36 @@
+/* Aether Core System */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --void-black: #000000;
+    --aether-lime: #ccff00;
+    --aether-violet: #8a2be2;
+    --aether-cyan: #00f2ff;
+    --zinc-900: #09090b;
+    --grid-size: 50px;
+}
+
+body {
+    background-color: var(--void-black);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    cursor: crosshair;
+}
+
+h1, h2, h3, .mono {
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+}
+
+.neon-border {
+    border: 1px solid var(--aether-lime);
+    box-shadow: 0 0 10px rgba(204, 255, 0, 0.2);
+}
+
+.neon-text {
+    color: var(--aether-lime);
+    text-shadow: 0 0 8px rgba(204, 255, 0, 0.5);
+}

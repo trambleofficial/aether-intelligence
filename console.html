@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER // CONSOLE</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="src/css/core.css">
+    <link rel="stylesheet" href="src/css/effects.css">
+
+    <style>
+        .cyber-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            grid-template-rows: 60px 1fr 200px;
+            gap: 20px;
+            height: 100vh;
+            padding: 20px;
+        }
+        .cyber-panel {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cyber-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 4px;
+            background: var(--aether-lime);
+        }
+    </style>
+</head>
+<body class="bg-black select-none">
+
+    <div class="aether-grid"></div>
+
+    <div class="cyber-grid">
+        <!-- Header -->
+        <header class="cyber-panel col-span-3 flex items-center justify-between px-8">
+            <div class="flex items-center gap-4">
+                <i data-lucide="shield-check" class="text-aether-lime w-5 h-5"></i>
+                <span class="mono text-xs font-bold">SECURE_ENVIRONMENT // ACTIVE</span>
+            </div>
+            <div class="mono text-[10px] text-white/30">
+                AUTH_USER: <span class="text-white">trambleofficial</span>
+            </div>
+        </header>
+
+        <!-- Sidebar Left: Stats -->
+        <aside class="cyber-panel row-span-2">
+            <h3 class="mono text-[10px] text-white/20 mb-6 flex items-center gap-2">
+                <div class="w-1 h-1 bg-white/20"></div> SYSTEM_RESOURCES
+            </h3>
+            
+            <div class="space-y-6">
+                <div>
+                    <div class="flex justify-between mono text-[8px] mb-2">
+                        <span>CPU_USAGE</span>
+                        <span class="text-aether-lime">42%</span>
+                    </div>
+                    <div class="h-0.5 bg-white/5 w-full">
+                        <div class="h-full bg-aether-lime w-[42%]"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mono text-[8px] mb-2">
+                        <span>NEURAL_MEM</span>
+                        <span class="text-aether-violet">68%</span>
+                    </div>
+                    <div class="h-0.5 bg-white/5 w-full">
+                        <div class="h-full bg-aether-violet w-[68%]"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mono text-[8px] mb-2">
+                        <span>UPLINK_BAND</span>
+                        <span class="text-aether-cyan">94%</span>
+                    </div>
+                    <div class="h-0.5 bg-white/5 w-full">
+                        <div class="h-full bg-aether-cyan w-[94%] shadow-[0_0_5px_rgba(0,242,255,0.5)]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <h3 class="mono text-[10px] text-white/20 mb-4">ACTIVE_NODES</h3>
+                <div class="space-y-2">
+                    <div class="text-[9px] mono text-white/40 flex items-center gap-2">
+                        <span class="w-1 h-1 bg-aether-lime"></span> TOKYO_X_01
+                    </div>
+                    <div class="text-[9px] mono text-white/40 flex items-center gap-2">
+                        <span class="w-1 h-1 bg-aether-lime"></span> LONDON_V_42
+                    </div>
+                    <div class="text-[9px] mono text-white/40 flex items-center gap-2">
+                        <span class="w-1 h-1 bg-zinc-700"></span> NEWYORK_A_00
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main View: Terminal -->
+        <main class="cyber-panel flex flex-col p-0">
+            <div class="p-4 border-b border-white/5 flex items-center justify-between">
+                <span class="mono text-[10px] text-white/40">CORE_DATA_STREAM</span>
+                <i data-lucide="terminal" class="w-3 h-3 text-white/20"></i>
+            </div>
+            <div id="consoleStream" class="flex-1 p-6 overflow-y-auto">
+                <!-- Data stream here -->
+            </div>
+        </main>
+
+        <!-- Sidebar Right: Info -->
+        <aside class="cyber-panel">
+            <h3 class="mono text-[10px] text-white/20 mb-6">GLOBAL_UPLINK</h3>
+            <div class="aspect-square bg-zinc-950 border border-white/5 flex items-center justify-center relative">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(204,255,0,0.05),transparent_70%)]"></div>
+                <i data-lucide="globe" class="w-24 h-24 text-white/5"></i>
+            </div>
+            <div class="mt-6 mono text-[10px] text-white/40">
+                TARGET: ALL_REGIONS<br/>
+                STATUS: SYNCED
+            </div>
+        </aside>
+
+        <!-- Bottom: Controls -->
+        <footer class="cyber-panel col-span-2 flex items-center gap-8 px-8">
+            <button class="px-6 py-2 border border-aether-lime text-aether-lime mono text-[10px] font-bold hover:bg-aether-lime hover:text-black transition-all uppercase">
+                INIT_OVERRIDE
+            </button>
+            <button class="px-6 py-2 border border-white/10 text-white/30 mono text-[10px] font-bold hover:border-white/40 hover:text-white transition-all uppercase">
+                DECOUPLE_MESH
+            </button>
+            <div class="ml-auto flex gap-4">
+                <i data-lucide="activity" class="w-4 h-4 text-white/10"></i>
+                <i data-lucide="database" class="w-4 h-4 text-white/10"></i>
+                <i data-lucide="cpu" class="w-4 h-4 text-white/10"></i>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="src/js/engine.js"></script>
+</body>
+</html>

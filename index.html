@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER // GATEWAY</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="src/css/core.css">
+    <link rel="stylesheet" href="src/css/effects.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aether: {
+                            lime: '#ccff00',
+                            violet: '#8a2be2',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black select-none">
+
+    <!-- Visual Layer -->
+    <div class="aether-grid"></div>
+    <div class="scanline"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 p-8 flex items-center justify-between mix-blend-difference">
+        <div class="flex items-center gap-2">
+            <div class="w-2 h-2 bg-aether-lime"></div>
+            <span class="mono text-xs font-bold tracking-widest">AETHER_INIT</span>
+        </div>
+        <div class="flex gap-8 mono text-[10px] text-white/50">
+            <a href="#" class="hover:text-aether-lime transition-colors">PROTOCOL</a>
+            <a href="#" class="hover:text-aether-lime transition-colors">DECRYPT</a>
+            <a href="#" class="hover:text-aether-lime transition-colors">ARCHIVE</a>
+        </div>
+    </nav>
+
+    <main class="relative min-h-screen flex items-center justify-center px-8">
+        <div class="max-w-4xl w-full text-center">
+            <div class="mb-6 mono text-[10px] text-aether-lime tracking-[0.4em] uppercase">System_Rebirth_Successful</div>
+            
+            <h1 class="text-7xl md:text-9xl font-black mb-12 leading-none glitch-hover tracking-tighter">
+                AETHER<br/><span class="text-white/20">INTELLIGENCE</span>
+            </h1>
+
+            <p class="max-w-xl mx-auto mb-16 mono text-[12px] text-white/40 leading-relaxed">
+                Interfacing with the next generation of autonomous digital architecture. 
+                Pure speed. Zero latency. Infinite reach.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="console.html" class="w-full sm:w-auto px-12 py-5 bg-aether-lime text-black font-bold mono text-sm hover:scale-105 transition-all shadow-[0_0_30px_rgba(204,255,0,0.3)]">
+                    ENTER_CONSOLE
+                </a>
+                <button class="w-full sm:w-auto px-12 py-5 bg-white/5 text-white/50 border border-white/10 font-bold mono text-sm hover:bg-white/10 hover:text-white transition-all">
+                    VIEW_SOURCE
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Data -->
+    <div class="fixed bottom-0 left-0 right-0 p-8 flex justify-between items-end mix-blend-difference mono text-[8px] text-white/20">
+        <div class="flex flex-col gap-1">
+            <span>COORD_X: <span id="coordX">000</span></span>
+            <span>COORD_Y: <span id="coordY">000</span></span>
+        </div>
+        <div class="text-right uppercase">
+            Developed by trambleofficial<br/>
+            All Rights Reserved // 2026
+        </div>
+    </div>
+
+    <script type="module" src="src/js/engine.js"></script>
+    <script>
+        window.addEventListener('mousemove', (e) => {
+            document.getElementById('coordX').innerText = e.clientX.toString().padStart(3, '0');
+            document.getElementById('coordY').innerText = e.clientY.toString().padStart(3, '0');
+        });
+    </script>
+</body>
+</html>
