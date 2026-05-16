@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER // ACHIEVEMENTS</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="src/css/core.css">
+    <link rel="stylesheet" href="src/css/effects.css">
+
+    <style>
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .achievement-card.locked {
+            filter: grayscale(1) blur(1px);
+            opacity: 0.4;
+        }
+        .achievement-card:hover:not(.locked) {
+            background: rgba(204, 255, 0, 0.03);
+            border-color: var(--aether-lime);
+            transform: translateY(-5px);
+        }
+        .badge-icon {
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .achievement-card:hover .badge-icon {
+            border-color: var(--aether-lime);
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-black select-none">
+
+    <div class="aether-grid"></div>
+
+    <nav class="p-8 flex items-center justify-between mix-blend-difference sticky top-0 z-50">
+        <a href="index.html" class="flex items-center gap-2">
+            <i data-lucide="arrow-left" class="w-4 h-4 text-aether-lime"></i>
+            <span class="mono text-xs font-bold tracking-widest text-white">RETURN_TO_GATEWAY</span>
+        </a>
+        <div class="mono text-xs font-bold text-white">
+            RANK: <span class="text-aether-lime">ELITE_OBSERVER</span>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-8 pt-12 pb-24">
+        <div class="mb-16 border-l-2 border-aether-lime pl-8">
+            <h1 class="text-5xl font-black tracking-tighter mb-4">SYSTEM_REWARDS</h1>
+            <p class="mono text-[10px] text-white/30 tracking-widest uppercase">
+                Synchronizing 12 achievements across all neural nodes
+            </p>
+        </div>
+
+        <div class="achievement-grid">
+            <!-- Achievement 1 -->
+            <div class="achievement-card">
+                <div class="badge-icon">
+                    <i data-lucide="zap" class="text-aether-lime w-6 h-6"></i>
+                </div>
+                <h3 class="mono text-sm font-bold mb-2">FIRST_UPLINK</h3>
+                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Establish your first secure connection to the Aether grid.</p>
+                <div class="mt-6 text-[8px] mono text-aether-lime font-bold">UNLOCKED // 2026.05.16</div>
+            </div>
+
+            <!-- Achievement 2 -->
+            <div class="achievement-card">
+                <div class="badge-icon">
+                    <i data-lucide="shield" class="text-aether-violet w-6 h-6"></i>
+                </div>
+                <h3 class="mono text-sm font-bold mb-2">VOID_WALKER</h3>
+                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Navigate through the system for over 24 hours continuously.</p>
+                <div class="mt-6 text-[8px] mono text-aether-violet font-bold">UNLOCKED // 2026.05.16</div>
+            </div>
+
+            <!-- Achievement 3 -->
+            <div class="achievement-card">
+                <div class="badge-icon">
+                    <i data-lucide="cpu" class="text-aether-cyan w-6 h-6"></i>
+                </div>
+                <h3 class="mono text-sm font-bold mb-2">CODE_BREAKER</h3>
+                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Decrypt high-level encryption packets without buffer errors.</p>
+                <div class="mt-6 text-[8px] mono text-aether-cyan font-bold">UNLOCKED // 2026.05.16</div>
+            </div>
+
+            <!-- Achievement 4 -->
+            <div class="achievement-card">
+                <div class="badge-icon">
+                    <i data-lucide="terminal" class="text-white w-6 h-6"></i>
+                </div>
+                <h3 class="mono text-sm font-bold mb-2">DATA_MINER</h3>
+                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Extract 1TB of raw telemetry from edge clusters.</p>
+                <div class="mt-6 text-[8px] mono text-white/20 font-bold">PROGRESS // 84%</div>
+            </div>
+
+            <!-- Achievement 5 (Locked) -->
+            <div class="achievement-card locked">
+                <div class="badge-icon">
+                    <i data-lucide="lock" class="text-white/20 w-6 h-6"></i>
+                </div>
+                <h3 class="mono text-sm font-bold mb-2">NEURAL_OVERLORD</h3>
+                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Achieve 100% synchronization with the core mesh.</p>
+                <div class="mt-6 text-[8px] mono text-white/10 font-bold">LOCKED // ENCRYPTED</div>
+            </div>
+
+            <!-- Achievement 6 -->
+            <div class="achievement-card">
+                <div class="badge-icon">
+                    <i data-lucide="activity" class="text-aether-lime w-6 h-6"></i>
+                </div>
+                <h3 class="mono text-sm font-bold mb-2">STABLE_SIGNAL</h3>
+                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Maintain 0.01ms latency for a duration of 30 days.</p>
+                <div class="mt-6 text-[8px] mono text-aether-lime/50 font-bold">UNLOCKED // 2026.05.15</div>
+            </div>
+
+            <!-- Achievement 7 -->
+            <div class="achievement-card">
+                <div class="badge-icon">
+                    <i data-lucide="database" class="text-aether-violet w-6 h-6"></i>
+                </div>
+                <h3 class="mono text-sm font-bold mb-2">ARCHIVE_MASTER</h3>
+                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Secure 12 backup shards across 3 global regions.</p>
+                <div class="mt-6 text-[8px] mono text-aether-violet/50 font-bold">UNLOCKED // 2026.05.14</div>
+            </div>
+
+            <!-- Achievement 8 (Locked) -->
+            <div class="achievement-card locked">
+                <div class="badge-icon">
+                    <i data-lucide="ghost" class="text-white/20 w-6 h-6"></i>
+                </div>
+                <h3 class="mono text-sm font-bold mb-2">GHOST_PROTOCOL</h3>
+                <p class="text-[10px] text-white/40 leading-relaxed uppercase">Bypass advanced firewall without being detected.</p>
+                <div class="mt-6 text-[8px] mono text-white/10 font-bold">LOCKED // ENCRYPTED</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="src/js/engine.js"></script>
+</body>
+</html>
